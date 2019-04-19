@@ -423,11 +423,13 @@ public class TwoForms001 extends Application {
 			         finalizar.setOnAction(evento->{
 			         	DAOCompra escribeBD = new EscribeBD();
                         DAOCliente escribeClienteBD = new EscribeClienteBD();
+                        DAOCompra escribeTXT = new EscribeTXT();
 			         	Compra compra1 = addCompra(nombre_p, dinero, producto, cantidad);
                         Person cli = addCliente(nombre_p, second_p, dni_p, phone_p, address_p, locality_p, zip_p);
 			    		lista_compras.add(compra1);
 			    		escribeBD.grabar(compra1);
                         escribeClienteBD.grabar(cli);
+                        escribeTXT.grabar(compra1);
 			            primaryStage.show();
 			            secondStage.close();
 			            thirdStage.close();
